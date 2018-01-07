@@ -14,7 +14,11 @@ export class TwitterComponent implements OnInit {
 
   constructor(protected twitterService: TwitterService) {}
 
-  ngOnInit() {}
+  // auth() method should be under ngOnInit() but it calls the API evertime angular restarts so I removed it and added
+  // it to a button.
+  ngOnInit() {
+    // this.twitterService.auth();
+  }
 
   getAuth() {
     this.twitterService.auth();
