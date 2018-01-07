@@ -15,9 +15,10 @@ export class TwitterService {
     });
   }
 
-  search() {
+  search(screen_name: string) {
     const headers = new HttpHeaders();
-    this.http.post('http://localhost:3000/gettwitteruser', {headers: headers}).subscribe((res) => {
+    this.http.post('http://localhost:3000/gettwitteruser/' + screen_name, {headers: headers})
+      .subscribe((res) => {
       console.log(res);
     });
   }

@@ -17,8 +17,8 @@ export class TwitterComponent implements OnInit {
     this.twitterService.makeCall();
   }
 
-  getUser() {
-    this.twitterService.search();
+  getUser(screen_name: string) {
+    this.twitterService.search(screen_name);
   }
 
 }

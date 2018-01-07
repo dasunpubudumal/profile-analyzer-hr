@@ -3,6 +3,7 @@ const config = require('./config');
 const urlencode = require('urlencode');
 
 functions = {
+  //Get the bearer token to send authorized requests.
   authorize: (req, res) => {
     const header = urlencode(config.consumerKey) + ':' + urlencode(config.consumerSecret);
     const encheader = new Buffer(header).toString('base64');
@@ -25,10 +26,10 @@ functions = {
     });
   },
 
+  //Get user details by screen name.
   getUser: (req, res) => {
     const bearheader = 'Bearer ' + config.bearertoken; //finalheader here is the bearer token.
-    console.log('Bearer token ' + bearheader);
-    request.get('https://api.twitter.com/1.1/users/show.json?screen_name='.concat('katyperry'),
+    request.get('https://api.twitter.com/1.1/users/show.json?screen_name='.concat(req.params.screen_name),
       {headers: {Authorization: bearheader},
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}, (err, body, response) => {
         if(err) throw err;

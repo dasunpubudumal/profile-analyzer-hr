@@ -15,7 +15,7 @@ app.use(cors());
 app.post('/authorize', functions.authorize);
 
 //REST Endpoint
-app.post('/gettwitteruser/', functions.getUser);
+app.post('/gettwitteruser/:screen_name', functions.getUser);
 
 app.listen(PORT, () => {
   console.log("Backend server is running on port ", PORT);
