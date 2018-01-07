@@ -25,7 +25,7 @@ functions = {
     });
   },
 
-  getUser:  function(req, res) {
+  getUser: (req, res) => {
     const bearheader = 'Bearer ' + config.bearertoken; //finalheader here is the bearer token.
     console.log('Bearer token ' + bearheader);
     request.get('https://api.twitter.com/1.1/users/show.json?screen_name='.concat('katyperry'),
