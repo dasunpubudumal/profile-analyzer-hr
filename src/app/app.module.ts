@@ -7,7 +7,7 @@ import { GithubComponent } from './components/github/github.component';
 import { StackoverflowComponent } from './components/stackoverflow/stackoverflow.component';
 import { TwitterComponent } from './components/twitter/twitter.component';
 import { LinkedinComponent } from './components/linkedin/linkedin.component';
-
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,8 @@ import { LinkedinComponent } from './components/linkedin/linkedin.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [GithubService],
   bootstrap: [AppComponent]
