@@ -30,5 +30,4 @@ export class GithubService {
       .map(res => res);
   }
 
-
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TwitterService} from '../../services/twitter.service';
+import { TwitterUser } from '../../models/twitter-user';
 
 @Component({
   selector: 'app-twitter',
@@ -9,7 +10,11 @@ import {TwitterService} from '../../services/twitter.service';
 })
 export class TwitterComponent implements OnInit {
 
-  constructor(protected twitterService: TwitterService) { }
+  protected twitterUserView: TwitterUser;
+
+  constructor(protected twitterService: TwitterService) {
+
+  }
 
   ngOnInit() {}
 
@@ -17,8 +22,14 @@ export class TwitterComponent implements OnInit {
     this.twitterService.auth();
   }
 
+  // A timeout was added to prevent async behaviour.
   getUser(screen_name: string) {
     this.twitterService.search(screen_name);
+    setTimeout(() => {
+      this.twitterUserView = this.twitterService.twitterUser;
+      console.log(this.twitterUserView);
+    }, 1000);
+
   }
 
 }

@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const urlencode = require('urlencode');
 const PORT = 3000;
 const functions = require('./functions');
-var app = express();
+const app = express();
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
