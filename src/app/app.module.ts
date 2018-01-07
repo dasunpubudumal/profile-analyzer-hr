@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { GithubComponent } from './components/github/github.component';
 import { StackoverflowComponent } from './components/stackoverflow/stackoverflow.component';
 import { TwitterComponent } from './components/twitter/twitter.component';
+import { LinkedinComponent } from './components/linkedin/linkedin.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { TwitterComponent } from './components/twitter/twitter.component';
     AppComponent,
     GithubComponent,
     StackoverflowComponent,
-    TwitterComponent
+    TwitterComponent,
+    LinkedinComponent
   ],
   imports: [
     BrowserModule,
