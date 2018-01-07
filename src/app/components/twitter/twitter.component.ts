@@ -11,8 +11,14 @@ export class TwitterComponent implements OnInit {
 
   constructor(protected twitterService: TwitterService) { }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  getAuth() {
     this.twitterService.makeCall();
+  }
+
+  getUser() {
+    this.twitterService.search();
   }
 
 }
