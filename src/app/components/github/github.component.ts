@@ -20,7 +20,6 @@ export class GithubComponent implements OnInit {
   ngOnInit() {
     this.githubService.getUser('dasunpubudumal')
       .subscribe(user => {
-        console.log(user.created_at);
         this.github_user.avatar_url = user.avatar_url;
         this.github_user.login = user.login;
         this.github_user.html_url = user.html_url;

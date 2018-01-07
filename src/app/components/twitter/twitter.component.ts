@@ -14,7 +14,7 @@ export class TwitterComponent implements OnInit {
   ngOnInit() {}
 
   getAuth() {
-    this.twitterService.makeCall();
+    this.twitterService.auth();
   }
 
   getUser(screen_name: string) {

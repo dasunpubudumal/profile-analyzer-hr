@@ -12,7 +12,6 @@ functions = {
     /* Check the documentation for required headers.
      * https://developer.twitter.com/en/docs/basics/authentication/overview/application-only
      */
-
     request.post('https://api.twitter.com/oauth2/token', { form: {'grant_type': 'client_credentials' },
       headers: {
       Authorization: finalheader,
