@@ -1,6 +1,6 @@
 const config = {
-  consumerKey: '75EJ6L7OIFeC3sYhO0YUDX7qa',
-  consumerSecret: 'fvwu0UAAVYMk7onzOdew14nqj8QbdS0XuGlsAlRReqVHvdVRZ4',
+  consumerKey: 'qJJFgPE34psyJUtFDl98vXvDY',
+  consumerSecret: 'w6NysZGkkH3mOAnm229O3gT0qBzT1ltOhPNrGvZ6lvOdEG9n6i',
   bearerToken: ''
 };
 
