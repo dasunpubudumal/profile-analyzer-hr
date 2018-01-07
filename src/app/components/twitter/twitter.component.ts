@@ -12,9 +12,7 @@ export class TwitterComponent implements OnInit {
 
   protected twitterUserView: TwitterUser;
 
-  constructor(protected twitterService: TwitterService) {
-
-  }
+  constructor(protected twitterService: TwitterService) {}
 
   ngOnInit() {}
 

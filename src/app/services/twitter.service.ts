@@ -23,12 +23,8 @@ export class TwitterService {
     const headers = new HttpHeaders();
     return this.http.post('http://localhost:3000/gettwitteruser/' + screen_name, {headers: headers})
       .subscribe((res) => {
-      // this.userdata = <any>res;
         this.userdata = res;
         this.twitterUser = this.userdata.data;
-        // console.log(this.userdata.data);
-      // this.twitterUser = JSON.parse(this.userdata.data.data);
-      // console.log(this.userdata.data);
     });
   }
 
