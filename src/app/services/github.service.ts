@@ -30,4 +30,8 @@ export class GithubService {
       .map(res => res);
   }
 
+  getUserBackend(username: string) {
+    return this.http.get<User>('http://localhost:3000/getgithubuser/'.concat(username)).map(res => res);
+  }
+
 }

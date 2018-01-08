@@ -18,9 +18,15 @@ export class GithubComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.githubService.getUser('dasunpubudumal')
-        .subscribe(user => {
-          this.github_user = user;
-        });
+      // this.githubService.getUser('dasunpubudumal')
+      //   .subscribe(user => {
+      //     this.github_user = user;
+      //   });
+
+      this.githubService.getUserBackend('dasunpubudumal').subscribe(user => {
+        // this.github_user = user
+        console.log(user);
+        // Have to parse data and assign it to the user.
+      });
     }
 }
