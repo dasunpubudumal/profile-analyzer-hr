@@ -20,8 +20,10 @@ export class TwitterComponent implements OnInit {
   // auth() method should be under ngOnInit() but it calls the API evertime angular restarts so I removed it and added
   // it to a button.
   ngOnInit() {
+    this.twitterUserView = new TwitterUser();
     this.twitterService.auth();
-    this.getUser('katyperry');
+    this.twitterUserView.name = 'dasunpubudumal';
+    // this.getUser('katyperry');
   }
 
   getAuth() {

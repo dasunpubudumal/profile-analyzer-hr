@@ -1,5 +1,13 @@
 <!--Twitter name: <span (load)="displayUser()" >{{twitterUserView.name}}</span>-->
 <!--Have to display the above in the dom after some timeout.-->
-<button (click)="getAuth()">Click me first</button>
-<button (click)="getUser('katyperry')">Click me second</button>
+<div class="container" align="center">
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="screen_name" type="text" class="validate" [(ngModel)]="twitterUserView.name">
+      <!--<label for="screen_name">Screen Name</label>-->
+    </div>
+  </div>
+  <a class="waves-effect waves-light btn" (click)="getAuth()">Get Auth Key</a>
+  <a class="waves-effect waves-light btn" (click)="getUser(twitterUserView.name)">Search for User</a>
+</div>
 
