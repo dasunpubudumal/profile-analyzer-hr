@@ -3,11 +3,11 @@
 <div class="container" align="center">
   <div class="row">
     <div class="input-field col s12">
-      <input id="screen_name" type="text" class="validate" [(ngModel)]="twitterUserView.name">
+      <input id="screen_name" type="text" class="validate" [(ngModel)]="twitterUserView.screen_name">
       <!--<label for="screen_name">Screen Name</label>-->
     </div>
   </div>
   <!--<a class="waves-effect waves-light btn" (click)="getAuth()">Get Auth Key</a>-->
-  <a class="waves-effect waves-light btn" (click)="getUser(twitterUserView.name)">Search for User</a>
+  <a class="waves-effect waves-light btn" (click)="getUser(twitterUserView.screen_name)">Search for User</a>
 </div>
 

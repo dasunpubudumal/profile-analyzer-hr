@@ -22,7 +22,7 @@ export class TwitterComponent implements OnInit {
   ngOnInit() {
     this.twitterUserView = new TwitterUser();
     this.twitterService.auth();
-    this.twitterUserView.name = 'dasunpubudumal';
+    this.twitterUserView.screen_name = 'dasunpubudumal';
     // this.getUser('katyperry');
   }
 
