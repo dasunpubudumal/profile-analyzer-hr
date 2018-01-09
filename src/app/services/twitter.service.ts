@@ -24,6 +24,7 @@ export class TwitterService {
     return this.http.post('http://localhost:3000/gettwitteruser/' + screen_name, {headers: headers})
       .subscribe((res) => {
         this.userdata = res;
+        // console.log(this.userdata.data);
         this.twitterUser = this.userdata.data;
     });
   }

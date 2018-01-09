@@ -19,6 +19,7 @@ export class User implements OnInit, OnChanges {
   following: number;
   created_at: string;
   registered_date: string;
+  data: any;
 
 
   ngOnInit(): void {}

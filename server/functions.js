@@ -1,6 +1,6 @@
 const request = require('request');
 const http = require('http');
-const config = require('./config');
+const {config} = require('./config');
 const urlencode = require('urlencode');
 
 functions = {
@@ -19,7 +19,7 @@ functions = {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}}, function(error, response, body) {
       if(error) throw error;
       else {
-        // console.log(JSON.parse(body).access_token);  //This is wht is logged in the native console.
+        console.log(JSON.parse(body).access_token);  //This is wht is logged in the native console.
         config.bearertoken = JSON.parse(body).access_token;
         res.json({success: true, data: config.bearertoken});  // This is logged in browser console.
       }
