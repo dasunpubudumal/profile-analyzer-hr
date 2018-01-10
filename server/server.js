@@ -1,34 +1,29 @@
 const express = require('express');
-const request = require('request');
-const https = require('https');
 const cors = require('cors');
-const {config, githubConfig} = require('./config');
 const bodyParser = require('body-parser');
-const urlencode = require('urlencode');
 const PORT = 3000;
-const functions = require('./functions');
 const app = express();
 
+// Controllers
+let gitHubController = require('./controllers/github');
+let twitterController = require('./controllers/twitter');
+let stackOverflowController = require('./controllers/stackoverflow');
+
+// Middleware
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 
-//Authorize
-app.post('/authorize', functions.authorize);
+// Twitter Authorize
+app.post('/authorize', twitterController.authorize);
 
 //Twitter REST Endpoint
-app.post('/gettwitteruser/:screen_name', functions.getUser);
+app.post('/gettwitteruser/:screen_name', twitterController.getUser);
 
-//Github REST endpoint
-app.get('/getgithubuser/:username', (req, res) =>
-  request.get('https://api.github.com/users/' + req.params.username + '?client_id=' +
-    githubConfig.client_id + '&' + 'client_secret=' + githubConfig.client_secret, {headers: {'User-Agent':'profile-analyzer'}} ,
-    (err, body, response) => {
-      if(err) throw err;
-      else {
-        res.json({success: true, data: JSON.parse(body.body)});
-      }
-  })
-);
+//Github REST Endpoint
+app.get('/getgithubuser/:username', gitHubController.getUser);
+
+//StackOverflow REST Endpoint
+app.post('/getstackofuser', stackOverflowController.getUser);
 
 // Server declaration
 app.listen(PORT, () => {

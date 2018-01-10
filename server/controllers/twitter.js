@@ -1,9 +1,9 @@
 const request = require('request');
 const http = require('http');
-const {config} = require('./config');
+const {config} = require('../config');
 const urlencode = require('urlencode');
 
-functions = {
+twitterController = {
   //Get the bearer token to send authorized requests.
   authorize: (req, res) => {
     const header = urlencode(config.consumerKey) + ':' + urlencode(config.consumerSecret);
@@ -16,7 +16,7 @@ functions = {
     request.post('https://api.twitter.com/oauth2/token', { form: {'grant_type': 'client_credentials' },
       headers: {
       Authorization: finalheader,
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}}, function(error, response, body) {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}}, (error, response, body) => {
       if(error) throw error;
       else {
         // console.log(JSON.parse(body).access_token);  //This is wht is logged in the native console.
@@ -37,7 +37,9 @@ functions = {
       });
   }
 
+
+
 };
 
 
-module.exports = functions;
+module.exports = twitterController;

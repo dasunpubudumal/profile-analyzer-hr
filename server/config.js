@@ -10,6 +10,14 @@ const githubConfig = {
   auth_token: ''
 };
 
+const stackOverflowConfig = {
+  client_id: '11585',
+  key: 'WaTAupj4SVFVSUbkqe0jlQ((',
+  client_secret: '7)mAMqU2z8XgQbfc8QwhJw((',
+  redirect_uri: 'https://stackexchange.com/oauth/login_success',
+  access_token: ''
+};
+
 module.exports = {
-  config, githubConfig
+  config, githubConfig, stackOverflowConfig
 };
