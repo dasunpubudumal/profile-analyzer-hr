@@ -12,7 +12,7 @@ export class StackoverflowComponent implements OnInit {
   constructor(protected stackOverflowService: StackoverflowService) { }
 
   ngOnInit() {
-    this.stackOverflowService.makeCall();
+    this.stackOverflowService.makeCall('7870026');
   }
 
 }

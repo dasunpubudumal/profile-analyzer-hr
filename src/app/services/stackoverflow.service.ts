@@ -6,9 +6,9 @@ export class StackoverflowService {
 
   constructor(protected http: HttpClient) { }
 
-  makeCall() {
+  makeCall(userid: string) {
     const headers = new HttpHeaders();
-    this.http.post('http://localhost:3000/getstackofuser', {headers: headers})
+    this.http.get('http://localhost:3000/getstackofuser/' + userid, {headers: headers})
       .subscribe((res) => {
         console.log(res);
       });

@@ -3,16 +3,13 @@ const {stackOverflowConfig} = require('../config');
 
 stackOverflowFunctions = {
   getUser : (req, res) => {
-    const URI = 'https://stackexchange.com/oauth/access_token?client_id=' +
-      stackOverflowConfig.client_id + '&' + 'client_secret=' + stackOverflowConfig.client_secret +
-      '&' + 'redirect_uri=' + stackOverflowConfig.redirect_uri;
-    request.post(URI , {
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'}}, (err, response, body) => {
+    const URL = 'https://api.stackexchange.com/users/' + req.params.user_id + '?order=desc&sort=reputation&site=stackoverflow';
+
+    request.get(URL, {headers: {'Content-Type': 'application/json'}} ,(err, body, response) => {
       if(err) throw err;
       else {
-        console.log(JSON.parse(body));
-        stackOverflowConfig.access_token = JSON.parse(body).access_token;
-        res.json({success: true, data: stackOverflowConfig.access_token});
+        console.log(body);
+        // res.json({success: true, data: JSON.parse(body)});
       }
     });
   }
