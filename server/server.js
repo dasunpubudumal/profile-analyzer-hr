@@ -4,14 +4,30 @@ const bodyParser = require('body-parser');
 const PORT = 3000;
 const app = express();
 
-// Controllers
+/*
+  =======================
+  CONTROLLERS
+  =======================
+*/
+
 let gitHubController = require('./controllers/github');
 let twitterController = require('./controllers/twitter');
 let stackOverflowController = require('./controllers/stackoverflow');
 
-// Middleware
+/*
+  =======================
+  MIDDLEWARE
+  =======================
+*/
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
+
+/*
+  =======================
+  BACKEND ENDPOINTS
+  =======================
+*/
 
 // Twitter Authorize
 app.post('/authorize', twitterController.authorize);
@@ -24,6 +40,12 @@ app.get('/getgithubuser/:username', gitHubController.getUser);
 
 //StackOverflow REST Endpoint
 app.post('/getstackofuser', stackOverflowController.getUser);
+
+/*
+  ========================
+  BACKEND SERVER
+  ========================
+*/
 
 // Server declaration
 app.listen(PORT, () => {
