@@ -7,7 +7,7 @@ stackOverflowFunctions = {
     request({method: 'GET', uri: URL, gzip: true},(err, body, response) => {
       if(err) throw err;
       else {
-          console.log(body);  // Have to decode gzip in body.body.
+          console.log(JSON.parse(body.body));  // Have to decode gzip in body.body.
         // res.json({success: true, data: JSON.parse(body)});
       }
     });
