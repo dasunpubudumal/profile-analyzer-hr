@@ -14,10 +14,10 @@
     "express": "^4.16.2",
     "get-twitter-bearer-token": "^1.0.0",
     "http": "0.0.0",
+    "merge-json": "0.1.0-b.3",
     "request": "^2.83.0",
     "twitter": "^1.7.1",
     "unzip-response": "^3.0.0",
-    "urlencode": "^1.1.0",
-    "zlib": "^1.0.5"
+    "urlencode": "^1.1.0"
   }
 }

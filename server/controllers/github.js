@@ -1,7 +1,5 @@
 const request = require('request');
-const http = require('http');
-const {githubConfig} = require('../config');
-const urlencode = require('urlencode');
+const merge = require('merge-json');
 
 gitHubFunctions = {
   getUser : (req, res) => {
@@ -9,10 +7,9 @@ gitHubFunctions = {
       (err, body, response) => {
         if(err) throw err;
         else {
-          // console.log(body);
           res.json({success: true, data: JSON.parse(body.body)});
         }
-      })
+      });
   }
 };
 
