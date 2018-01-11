@@ -13,8 +13,11 @@
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "get-twitter-bearer-token": "^1.0.0",
+    "http": "0.0.0",
     "request": "^2.83.0",
     "twitter": "^1.7.1",
-    "urlencode": "^1.1.0"
+    "unzip-response": "^3.0.0",
+    "urlencode": "^1.1.0",
+    "zlib": "^1.0.5"
   }
 }
