@@ -26,6 +26,11 @@ export class GithubComponent implements OnInit {
   }
 
   ngOnInit() {
+
+      /*
+        All code here is for testing.
+       */
+
       this.githubService.getUserBackend('dasunpubudumal').subscribe(user => {
         this.github_user = user.data;
         // console.log(this.github_user);  // Testing purposes
@@ -35,6 +40,7 @@ export class GithubComponent implements OnInit {
         this.github_user.repositories = repo.data;
         // console.log(this.github_user.repositories); // Testing purposes
       });
+
     }
 
     getUser(username: string) {
