@@ -1,4 +1,5 @@
 import {OnChanges, OnInit} from '@angular/core';
+import {Repository} from './repository';
 
 export class User implements OnInit, OnChanges {
 
@@ -20,12 +21,15 @@ export class User implements OnInit, OnChanges {
   created_at: string;
   registered_date: string;
   data: any;
+  repository: Repository;
 
 
   ngOnInit(): void {}
 
   ngOnChanges(): void {}
 
-  constructor() {}
+  constructor() {
+    this.repository = new Repository();
+  }
 
 }

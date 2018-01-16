@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHandler, HttpHeaders} from '@angular/common/http';
+import 'rxjs/add/operator/map';
+import {StackOverflowUser} from '../models/stack-overflow-user';
 
 @Injectable()
 export class StackoverflowService {
@@ -8,10 +10,8 @@ export class StackoverflowService {
 
   makeCall(userid: string) {
     const headers = new HttpHeaders();
-    this.http.get('http://localhost:3000/getstackofuser/' + userid, {headers: headers})
-      .subscribe((res) => {
-        console.log(res);
-      });
+    return this.http.get<StackOverflowUser>('http://localhost:3000/getstackofuser/' + userid, {headers: headers})
+      .map(res => res);
   }
 
 }

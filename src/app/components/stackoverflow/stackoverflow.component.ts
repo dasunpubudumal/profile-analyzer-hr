@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StackoverflowService } from '../../services/stackoverflow.service';
+import {StackOverflowUser} from '../../models/stack-overflow-user';
 
 @Component({
   selector: 'app-stackoverflow',
@@ -9,10 +10,17 @@ import { StackoverflowService } from '../../services/stackoverflow.service';
 })
 export class StackoverflowComponent implements OnInit {
 
-  constructor(protected stackOverflowService: StackoverflowService) { }
+  protected stackOverflowUser: StackOverflowUser;
+
+  constructor(protected stackOverflowService: StackoverflowService) {
+    this.stackOverflowUser = new StackOverflowUser();
+  }
 
   ngOnInit() {
-    this.stackOverflowService.makeCall('7870026');
+    this.stackOverflowService.makeCall('7870026').subscribe(user => {
+      this.stackOverflowUser = user.data.items[0];
+      // console.log(this.stackOverflowUser.account_id);
+    });
   }
 
 }

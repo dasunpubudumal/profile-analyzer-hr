@@ -37,6 +37,7 @@ app.post('/gettwitteruser/:screen_name', twitterController.getUser);
 
 //Github REST Endpoint
 app.get('/getgithubuser/:username', gitHubController.getUser);
+app.get('/getrepo/:username', gitHubController.getRepos);
 
 //StackOverflow REST Endpoint
 app.get('/getstackofuser/:user_id', stackOverflowController.getUser);
