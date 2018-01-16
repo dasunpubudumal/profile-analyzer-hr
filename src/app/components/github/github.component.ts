@@ -28,7 +28,7 @@ export class GithubComponent implements OnInit {
 
       this.githubService.getRepoInfo('dasunpubudumal').subscribe(repo => {
         this.github_user.repository = repo.data;
-        // console.log(this.github_user.repository);
+        // console.log(this.github_user.repository); // Testing purposes
       });
     }
 }
