@@ -21,7 +21,7 @@ export class User implements OnInit, OnChanges {
   created_at: string;
   registered_date: string;
   data: any;
-  repository: Repository;
+  repositories: any[];
 
 
   ngOnInit(): void {}
@@ -29,7 +29,6 @@ export class User implements OnInit, OnChanges {
   ngOnChanges(): void {}
 
   constructor() {
-    this.repository = new Repository();
   }
 
 }
