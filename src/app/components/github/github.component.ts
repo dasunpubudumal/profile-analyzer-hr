@@ -15,6 +15,11 @@ export class GithubComponent implements OnInit {
 
   protected github_user: User;
 
+  // And this should be used for the parameter of each method.
+  // This should be used as the ngModel which binds the input.
+  protected username: string;
+
+
   constructor(protected githubService: GithubService,
               protected repositoryService: RepositoryService) {
     this.github_user = new User();
