@@ -14,12 +14,10 @@ import {RepositoryService} from '../../services/repository.service';
 export class GithubComponent implements OnInit {
 
   protected github_user: User;
-  // protected repository: Repository;
 
   constructor(protected githubService: GithubService,
               protected repositoryService: RepositoryService) {
     this.github_user = new User();
-    // this.repository = new Repository();
   }
 
   ngOnInit() {
