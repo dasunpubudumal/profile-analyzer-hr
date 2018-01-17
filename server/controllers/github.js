@@ -1,5 +1,5 @@
 const request = require('request');
-const http = require('http');
+
 const {githubConfig} = require('../config');
 const urlencode = require('urlencode');
 

@@ -32,12 +32,12 @@ export class GithubComponent implements OnInit {
        */
 
       this.githubService.getUserBackend('dasunpubudumal').subscribe(user => {
-        this.github_user = user.data;
+        this.github_user = user;
         // console.log(this.github_user);  // Testing purposes
       });
 
       this.githubService.getRepoInfo('dasunpubudumal').subscribe(repo => {
-        this.github_user.repositories = repo.data;
+        this.github_user.repositories = repo;
         // console.log(this.github_user.repositories); // Testing purposes
       });
 
@@ -47,13 +47,13 @@ export class GithubComponent implements OnInit {
 
       // Basic user info
       this.githubService.getUserBackend(this.username).subscribe(user => {
-        this.github_user = user.data;
+        this.github_user = user;
       });
 
       // Repo info
 
       this.githubService.getRepoInfo(this.username).subscribe(repo => {
-        this.github_user.repositories = repo.data;
+        this.github_user.repositories = repo;
       });
     }
 
