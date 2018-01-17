@@ -10,16 +10,17 @@ export class GithubService {
   public user: User;
 
   constructor(protected http: HttpClient) {
-    console.log('Github Service Initialize');
     this.user = new User();
   }
 
   getUserBackend(username: string) {
-    return this.http.get<User>('http://localhost:3000/getgithubuser/'.concat(username)).map(res => res.data);
+    return this.http.get<User>('http://localhost:3000/getgithubuser/'.concat(username))
+      .map(res => res.data);
   }
 
   getRepoInfo(username: string) {
-    return this.http.get<Repository>('http://localhost:3000/getrepo/'.concat(username)).map(res => res.data);
+    return this.http.get<Repository>('http://localhost:3000/getrepo/'.concat(username))
+      .map(res => res.data);
   }
 
 }
